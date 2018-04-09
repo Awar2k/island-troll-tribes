@@ -1,0 +1,43 @@
+package Item
+
+public class Item
+    string id
+  
+    construct(string itemId)
+        id = itemId
+      
+public class Recipe
+    Item array[6] items
+    
+    construct(Item firstItem)
+        items[0] = firstItem
+    
+    construct(Item firstItem, Item secondItem)
+        items[0] = firstItem
+        items[1] = secondItem
+    
+    construct(Item firstItem, Item secondItem, Item thirdItem)
+        items[0] = firstItem
+        items[1] = secondItem
+        items[2] = thirdItem
+    
+    construct(Item firstItem, Item secondItem, Item thirdItem, Item fourthItem)
+        items[0] = firstItem
+        items[1] = secondItem
+        items[2] = thirdItem
+        items[3] = fourthItem
+    
+    construct(Item firstItem, Item secondItem, Item thirdItem, Item fourthItem, Item fifthItem)
+        items[0] = firstItem
+        items[1] = secondItem
+        items[2] = thirdItem
+        items[3] = fourthItem
+        items[4] = fifthItem
+    
+    construct(Item firstItem, Item secondItem, Item thirdItem, Item fourthItem, Item fifthItem, Item sixthItem)
+        items[0] = firstItem
+        items[1] = secondItem
+        items[2] = thirdItem
+        items[3] = fourthItem
+        items[4] = fifthItem
+        items[5] = sixthItem
