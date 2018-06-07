@@ -36,18 +36,7 @@ local item added
             call itemLower(3)
         endif
         set bol1 = IsItemHide(t[3])
-        set bol2 = IsItemHide(t[4])
-        if i[0] == ITEM_CLAY_BALL and i[1] == ITEM_STICK and i[2] == ITEM_STICK and bol1 and bol2 then
-            call RemoveItem(t[0])
-            call RemoveItem(t[1])
-            call RemoveItem(t[2])
-            call RemoveItem(t[3])
-            call RemoveItem(t[4])
-            set added = CreateItem(ITEM_TROLL_HUT_KIT, GetUnitX(GetTriggerUnit()), GetUnitY(GetTriggerUnit()))
-            call UnitAddItem(GetTriggerUnit(), added)
-            call itemLower(5)
-        endif
-        if i[0] == ITEM_CLAY_BALL and i[1] == ITEM_CLAY_BALL and i[2] == ITEM_CLAY_BALL and i[3] == ITEM_CLAY_BALL then
+        if i[0] == ITEM_STICK and i[1] == ITEM_CLAY_BALL and i[2] == ITEM_CLAY_BALL and bol1 then
             call RemoveItem(t[0])
             call RemoveItem(t[1])
             call RemoveItem(t[2])
