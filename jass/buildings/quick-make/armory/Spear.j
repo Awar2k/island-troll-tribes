@@ -19,7 +19,10 @@ local item i = null
         set i = RandomItemInRectBJ(GetRectFromCircleBJ(GetUnitLoc(u), range),Condition(function FilterItemIsStone))
         call UnitAddItemSwapped( i, u )
         set i = null
-        set i = RandomItemInRectBJ(GetRectFromCircleBJ(GetUnitLoc(u), range),Condition(function FilterItemIsPole))
+        set i = RandomItemInRectBJ(GetRectFromCircleBJ(GetUnitLoc(u), range),Condition(function FilterItemIsBone))
+        if i == null then
+            set i = RandomItemInRectBJ(GetRectFromCircleBJ(GetUnitLoc(u), range),Condition(function FilterItemIsPole))
+        endif
         call UnitAddItemSwapped( i, u )
         set i = null
     endif
