@@ -1,0 +1,57 @@
+package HostileSpawns
+import ObjectIdGenerator
+import UnitObjEditing
+import UnitIndexer
+
+enum Gender
+    Male
+    Female
+
+abstract class Animal
+    static Animal array animals
+
+    private Gender gender
+    private unit self
+
+    construct(vec2 pos)
+        this.gender = GetRandomInt(0, 1) castTo Gender
+        this.self = createUnit(Player(PLAYER_NEUTRAL_AGGRESSIVE), this.getId(), pos, angle(GetRandomReal(0, PI2)))
+        animals[this.self.getIndex()] = this
+
+    function getUnit() returns unit
+        return self
+
+    function getGender() returns Gender
+        return gender
+    
+    abstract function getId() returns integer
+
+class Elk extends Animal
+    static let id = compiletime(UNIT_ID_GEN.next())
+
+    @compiletime static private function generate()
+        new UnitDefinition(id, 'nder')
+        ..setName("Elk")
+        ..setRace(Race.Orc)
+        ..setHitPointsMaximumBase(115)
+        ..setSpeedBase(500)
+        ..setTooltipExtended("Raw meat that needs to be cooked")
+        ..setScalingValue(2.1)
+        ..setHideMinimapDisplay(true)
+        ..setSelectionScale(1.6)
+        ..setLevel(3)
+        ..setSightRadiusNight(200)
+        ..setSightRadiusDay(200)
+        ..setArmorType(ArmorType.Small)
+
+    construct(vec2 pos)
+        super(pos)
+
+    override function getId() returns integer
+        return id
+
+public function unit.getAnimal() returns Animal
+    return Animal.animals[this.getIndex()]
+
+init
+    let elk = new Elk(vec2(0, 0))
