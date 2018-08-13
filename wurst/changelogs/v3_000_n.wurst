@@ -2,7 +2,7 @@ package v3_000_n
 import ChangeLog
 
 init
-    new ChangeLog(3, 000, 'n')
+    new ChangeLog(3,0, 'n')
     ..add("Mammoth now has the following drops: 100% Medallion of Courage, 100% 2x Horns of the Mammoth, 25% Steel Ingot, 25% Ancient Bow")
     ..add("Disco Duck now has the following drops: 100% Medallion of Courage, 100% one of the three Pinions, 100% 2x Steel Ingot")
     ..add("Anti-Magic Shell modified from 300 damage, 0 s cooldown to 100 damage, 1 s cooldown")
